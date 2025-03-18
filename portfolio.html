@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barath M's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .profile-image {
+    padding-right: 50px;
+    padding-left: 50px;
+    float: right;
+    margin: 0 0 20px -200px;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Set equal to width for a circle */
+    border-radius: 50%; /* 50% creates a circle */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+}
+
+
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #ff5722;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff5722;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        #about {
+            background-color: #ffe9ea;
+            border-left: 5px solid #ff5722;
+        }
+
+        #projects {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+
+        #projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .project {
+            flex: 1 1 calc(33% - 20px);
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fafafa;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+        }
+
+        .project:hover {
+            background-color: #f5f5f5;
+        }
+
+        .project h3 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ff5722;
+        }
+
+        .project p {
+            font-size: 16px;
+        }
+
+        .project a {
+            display: block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project a:hover {
+            color: #ff5722;
+        }
+
+       #skills {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 20px;
+        }
+
+        .skill {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            /* Limit the width based on content */
+            max-width: 300px; /* Adjust as needed */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .skill:hover {
+            background-color: #ff8a65;
+        }
+
+  #contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center form elements */
+background-color: #e8f5e9;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc; /* Light border for form fields */
+            border-radius: 3px; /* Rounded corners for form fields */
+background-color: #e8f5e9;
+        }
+
+        #contact-form button {
+            padding: 10px 20px; /* Increase button padding */
+            font-size: 16px;
+            background-color: #ff5722; /* Vibrant primary color for button */
+            color: #fff;
+            border: none;
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact-form button:hover {
+            background-color: #f44336; /* Darker color on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            border-top: 5px solid #ff5722; /* Vibrant border */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            border-top: 5px solid #ff5722;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+  .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <header>
+ <img src="C:\Users\Happy\OneDrive\Documents\dhanu\img.jpg" class="profile-image">
+        <h1>DHANUSH P Portfolio</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>As a pre-final-year engineering student pursuing a B.Tech in Information Technology at Kingston Engineering College, I am deeply passionate about applying technology to address real-world challenges. My academic journey has fueled my interest in diverse areas, including data science, full-stack web development, and machine learning. Currently, I am actively seeking internships in these fields and exploring freelance opportunities. </p>
+    </section>
+
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div id="projects-container">
+           
+            <div class="project">
+                <h3>Weatherforcast</h3>
+                <p>Designed and implemented a project management tool for software development for forcasting the weather using weather api which this project is done at my 2nd year.</p>
+                <a href="https://github.com/Mbarathm345672005/java-project-weather-forcast-/blob/main/EX%2011-Mini%20Project%20Weather%20Forecasting.pdf">GitHub Link</a>
+            </div>
+            <div class="project">
+                <h3>Road Lane Detection</h3>
+                <p>Created a  Python project ,this project is about roadlane detection and its done at my 2nd year.</p>
+                <a href="https://github.com/Mbarathm345672005/project2/blob/main/mark7.py">GitHub Link</a>
+            </div>
+           
+        </div>
+    </section>
+
+      <section id="skills">
+<h1 > Skills</h1>
+<center>
+    <h2 style="color:green">Technical Skills</h2>
+    <div class="skill">Python</div>
+    <div class="skill" style=" background-color: #ff5722;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            /* Limit the width based on content */
+            max-width: 400px; /* Adjust as needed */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;">Web development (HTML, CSS, JS, PHP, Java Servlet)</div>
+    <div class="skill">Data Science (Basics)</div>
+    <div class="skill">Machine Learning (Basics)</div>
+    <div class="skill">Database Management System (SQL)</div>
+    <div class="skill" style="max-width: 520px;">Data analysis (using tools like Excel, SQL, or Python libraries) (Basics)</div>
+    <div class="skill">MS Office (Word, PPT, Excel) (Basics)</div>
+    <div class="skill">Java</div>
+<br/>
+    <h2 style="color:green">Soft Skills</h2>
+    <div class="skill">Work Ethics</div>
+    <div class="skill">Problem Solving</div>
+    <div class="skill">Critical Thinking</div>
+</center>
+</section>
+    <section id="contact">
+        <h2>Contact</h2>
+  
+      
+        <form id="contact-form">
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+</form>
+    </section>
+  <div class="contact-info">
+           
+            <a href="https://www.instagram.com/mbarath4466/#" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/barathm77" target="_blank">LinkedIn</a>
+        </div>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+    <footer>
+        <p>&copy; 2024 Dhanush P Portfolio</p>
+    </footer>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        // Get form data
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Send the message to the specified email address
+        var mailtoLink = 'mailto:mbarath4666@gmail.com?subject=New Message from Portfolio&body=Name: ' + name + '%0AEmail: ' + email + '%0AMessage: ' + message;
+        window.location.href = mailtoLink;
+
+        // Display confirmation message (optional)
+        alert('Thank you for your message! Your email will be sent shortly.');
+
+        // Clear form fields
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    });
+</script>
+</body>
+</html>
